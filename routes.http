@@ -9,8 +9,18 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0g
 
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file"; filename="example.mp3"
+Content-Disposition: form-data; name="file"; filename="e o pix.mp3"
 Content-Type: audio/mpeg
 
-< ./example.mp3
+< ./e o pix.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @create-transcription
+POST http://localhost:3333/videos/e4c9ddd7-9d48-4b45-a593-00348744fac8/transcription
+Content-Type: application/json
+
+{
+"prompt": "e, o, pix, nada"
+}
