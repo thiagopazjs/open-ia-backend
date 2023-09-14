@@ -9,18 +9,30 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0g
 
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file"; filename="e o pix.mp3"
+Content-Disposition: form-data; name="file"; filename="exam.mp3"
 Content-Type: audio/mpeg
 
-< ./e o pix.mp3
+< ./exam.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
-# @create-transcription
-POST http://localhost:3333/videos/e4c9ddd7-9d48-4b45-a593-00348744fac8/transcription
+# @name create-transcription
+POST http://localhost:3333/videos/2261484c-6f57-49b6-b177-6456a7629af1/transcription
 Content-Type: application/json
 
 {
-"prompt": "e, o, pix, nada"
+ "prompt": "e o pix"
+}
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+"prompt": "2261484c-6f57-49b6-b177-6456a7629af1",
+"temperature": "0.5",
+"template": "Gere um resumo sucinto da transcrição do video informada a seguir: '''{transcription}'''"
 }
